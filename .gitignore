@@ -34,9 +34,9 @@ build/
 ### VS Code ###
 .vscode/
 
-/payment/src/main/resources/secrets.properties/
-/wallet/src/main/resources/secrets.properties/
-/identity/src/main/resources/secrets.properties/
+/payment/src/main/resources/secrets.properties
+/wallet/src/main/resources/secrets.properties
+/identity/src/main/resources/secrets.properties
 
 ### Mac OS ###
 .DS_Store
