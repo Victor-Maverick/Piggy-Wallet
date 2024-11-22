@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: wallet-service
+  config:
+    import: "classpath:secrets.properties"
+  pulsar:
+    client:
+      service-url: pulsar://localhost:6650
+
+server:
+  port: 7779

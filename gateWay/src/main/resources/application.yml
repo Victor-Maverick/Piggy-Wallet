@@ -1,0 +1,24 @@
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: false
+      routes:
+        - id: identity-service
+          uri: lb://IDENTITY-SERVICE
+          predicates:
+            - Path=/identity/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/piggy_wallet/
+          jwk-set-uri: http://localhost:8080/realms/piggy_wallet/protocol/openid-connect/certs
+server:
+  port: 8083

@@ -1,0 +1,18 @@
+spring:
+    application:
+        name: identity-service
+    config:
+        import: secrets.properties
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: http://localhost:8080/realms/piggy_wallet
+                    jwk-set-uri: http://localhost:8080/realms/piggy_wallet/protocol/openid-connect/certs
+    pulsar:
+        client:
+            service-url: pulsar://localhost:6650
+
+server:
+    port: 8989
+
